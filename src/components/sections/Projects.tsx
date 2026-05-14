@@ -58,47 +58,47 @@ const projectCategories = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-16 px-6">
       <div className="container-custom">
-        <div className="max-w-2xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Strategic <span className="text-gradient">Projects</span></h2>
-          <p className="text-slate-400 text-lg">Operationalizing M&E frameworks across high-impact initiatives and startup acceleration cycles.</p>
+        <div className="max-w-2xl mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic <span className="text-gradient">Projects</span></h2>
+          <p className="text-slate-400 text-base">Operationalizing M&E frameworks across high-impact initiatives.</p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-12">
           {projectCategories.map((category, catIndex) => (
             <div key={catIndex}>
-              <h3 className="text-2xl font-bold text-white mb-10 flex items-center gap-4">
+              <h3 className="text-lg font-bold text-slate-300 mb-6 flex items-center gap-3 uppercase tracking-[0.2em]">
                 {category.title}
                 <div className="h-px bg-slate-800 flex-grow" />
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.projects.map((project, pIndex) => (
                   <motion.div 
                     key={pIndex}
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: pIndex * 0.1 }}
-                    className="group p-8 rounded-2xl bg-navy-light border border-slate-800 hover:border-teal-500/30 transition-all duration-300 flex flex-col"
+                    transition={{ duration: 0.4, delay: pIndex * 0.05 }}
+                    className="group p-6 rounded-xl bg-navy-light border border-slate-800 hover:border-teal-500/20 transition-all duration-300 flex flex-col"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                      <project.icon size={24} className="text-teal-400" />
+                    <div className="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <project.icon size={20} className="text-teal-400" />
                     </div>
                     
-                    <div className="mb-4">
-                      <h4 className="text-xl font-bold text-white mb-1 group-hover:text-teal-400 transition-colors">{project.name}</h4>
-                      <div className="text-sm font-mono text-teal-500/80 font-semibold">{project.metric}</div>
+                    <div className="mb-3">
+                      <h4 className="text-lg font-bold text-white mb-0.5 group-hover:text-teal-400 transition-colors">{project.name}</h4>
+                      <div className="text-[10px] font-mono text-teal-500/80 font-bold uppercase tracking-wider">{project.metric}</div>
                     </div>
                     
-                    <p className="text-slate-400 mb-8 flex-grow leading-relaxed">
+                    <p className="text-xs text-slate-400 mb-6 flex-grow leading-relaxed">
                       {project.description}
                     </p>
                     
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {project.tags.map((tag, tIndex) => (
-                        <span key={tIndex} className="px-3 py-1 bg-navy text-slate-400 text-xs rounded-full border border-slate-800">
+                        <span key={tIndex} className="px-2 py-0.5 bg-navy text-slate-500 text-[9px] rounded-md border border-slate-800 font-bold uppercase tracking-tight">
                           {tag}
                         </span>
                       ))}
